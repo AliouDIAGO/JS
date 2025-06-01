@@ -157,3 +157,51 @@ Etudiant.notes.push(17);
 console.log(`Les notes de ${Etudiant.nom} sont ${Etudiant.notes}`);
 
 
+//exercice4
+let classe={
+    nom:"l2 informatique",
+    annee:2024,
+     etudiants1:[
+        {nom:"awa",notes:[13,14,15]},
+        {nom:"cheikh",notes:[10,9,11]},
+        {nom:"aboubacar",notes:[17,16,18]}
+    ],
+ }
+ //afficher le nom de la classe et l'annee
+ console.log(`le nom de la classe:${classe.nom},annee:${classe.annee}`);
+ //afficher le nom et la moyenne
+ 
+for (let i = 0; i < classe.etudiants1.length; i++) {
+   let etu=classe.etudiants1[i] ;
+   let somme=0;
+   for (let j = 0; j < etu.notes.length; j++) {
+    somme+=etu.notes[j];
+   }
+    let moyenne=somme/etu.notes.length;
+    console.log(`${etu.nom},moyenne:${moyenne}`);
+}
+// classe.etudiants1[i].notes[j]
+//ajouter un nouvel etudiant
+classe.etudiants1.push({
+    nom:"john",
+    notes:[18,19,20]
+});
+for (let i = 0; i < classe.etudiants1.length; i++) {
+   let etu=classe.etudiants1[i] ;
+console.log(`etudiant:${etu.nom},notes:${etu.notes}`);
+}
+//afficher le nombre maximal d'etudiants
+console.log(`le nombre d'etudiants est:${classe.etudiants1.length}`);
+let totalmoy=0;
+for (let i = 0; i < classe.etudiants1.length; i++) {
+   let etu=classe.etudiants1[i] ;
+   let somme=0;
+   for (let j = 0; j < etu.notes.length; j++) {
+    somme+=etu.notes[j];
+   }
+    let moyenne=somme/etu.notes.length;
+    totalmoy+=moyenne;
+    console.log(`${etu.nom},moyenne:${moyenne}`);
+}
+let moygene=totalmoy/classe.etudiants1.length
+console.log(`la moyenne generale est :${moygene}`);
